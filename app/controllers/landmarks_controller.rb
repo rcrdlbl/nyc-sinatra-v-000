@@ -2,7 +2,7 @@ class LandmarksController < ApplicationController
   # add controller methods
   get '/landmarks' do
     @landmarks = Landmark.all
-    erb :'landmark/index'
+    erb :'landmarks/index'
   end
 
   get '/landmarks/new' do
@@ -27,6 +27,6 @@ class LandmarksController < ApplicationController
   patch '/landmarks/:id' do
     @landmark = Landmark.find_by(id: params[:id])
     @landmark.update(params[:landmark])
-    redirect "landmarks/#{@landmark.id}" 
+    redirect "landmarks/#{@landmark.id}"
   end
 end
